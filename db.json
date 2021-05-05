@@ -16,7 +16,7 @@
       "id": 3,
       "name": "Mr. Potato Head",
       "image": "https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/d/d8/Mr-potato-head-toy-story.gif/revision/latest?cb=20151129131217",
-      "likes": 3
+      "likes": 10
     },
     {
       "id": 4,
@@ -47,6 +47,12 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": 1
+    },
+    {
+      "name": "green ranger",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/95/GreenRanger.jpg/220px-GreenRanger.jpg",
+      "likes": 0,
+      "id": 9
     }
   ]
 }
