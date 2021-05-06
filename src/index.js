@@ -32,11 +32,13 @@ function renderToy(toy){
  <p>${toy.likes}</p>
 <button class="like-btn" id=${toy.id}>Like <3</button>`
 
+document.getElementById('toy-collection').appendChild(div)
+
 //come back and ask why ${toy.id} didn't work !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 let likeButton = div.querySelector('button')
 likeButton.addEventListener('click', ()=>{
   // console.log(typeof toy.likes)
-  let newLikes = toy.likes + 1
+  // let newLikes = toy.likes + 1
   fetch(`http://localhost:3000/toys/${toy.id}`, {
   method: "PATCH",
   headers: {
@@ -44,18 +46,20 @@ likeButton.addEventListener('click', ()=>{
     Accept: "application/json"
   },
   body: JSON.stringify({
-    'likes' : newLikes
+    'likes' : toy.likes + 1
   }),
 })
   .then((r) => r.json())
   .then((updatedToy) =>{
+    toy.likes = updatedToy.likes
     div.querySelector('p').textContent = updatedToy.likes;
     // likeButton.reset();
   });
 })
 
-document.getElementById('toy-collection').appendChild(div)
 }
+
+
 
 
 // POSTing form inputs to server, and rendering it to the DOM
